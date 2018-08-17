@@ -1,5 +1,6 @@
-# AXELROD TRADING BOT
-*Trading Bot for Cryptocurrency*
+# TRADING BOT
+
+Arbitrage Trading Bot for Cryptocurrency
 
 ## Running application
 
@@ -10,10 +11,6 @@
     * *For see all opportunities, disable filters.*
 
 3) Now, execute the command `npm start`
-
-## Exchanges
-
-I use the [ccxt](https://github.com/ccxt/ccxt/wiki/Manual#exchanges) library, so all exchanges that do not require token and secret are integrated.
 
 ## Contribuing
 See the [CONTRIBUING.md](https://github.com/bielversallini/axelrod-tradingbot/blob/master/CONTRIBUTING.md) file for details
