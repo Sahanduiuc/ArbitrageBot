@@ -1,0 +1,35 @@
+{
+  "arbitrage": {
+    "checkInterval": 5,
+    "openOpportunity": 4.00,
+    "closeOpportunity": 2.00,
+    "filter": {
+      "exchanges": true,
+      "tickets": true
+    },
+    "exchanges": [
+      "btcmarkets",
+      "independentreserve"
+    ],
+    "tickets": [
+      "BTC"
+    ],
+    "pair": 
+      "BTC/AUD"
+    
+  },
+  "trading": {
+    "exchanges": [
+      "btcmarkets",
+      "independentreserve"
+    ],
+    "tickets":[
+      "BTC",
+      "BNB",
+      "SALT"
+    ],
+    "pair": 
+      "BTC/AUD"
+    
+  }
+}
