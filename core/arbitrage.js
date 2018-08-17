@@ -10,7 +10,7 @@ const fs = require('fs');
 let lastOpportunities = [];
 
 exports.checkOpportunity = async function(prices) {
-
+  console.log('checkOpportunity');
   let bestBid = lodash.maxBy(prices, function(item) {
     return item.bid
   });
@@ -33,9 +33,9 @@ exports.checkOpportunity = async function(prices) {
     let percentage = ((estimatedGain / funds) * 100).toFixed(2);
 
     let opportunity = {
-      id: bestAsk.ticket.toLowerCase() + '-' + bestAsk.name + '-' + bestBid.name,
+      id: '-' + bestAsk.name + '-' + bestBid.name,
       created_at: new Date(),
-      ticket: bestAsk.ticket,
+      //ticket: bestAsk.ticket,
       amount: Number(amount.toFixed(8)),
       buy_at: bestAsk.name,
       ask: bestAsk.ask,

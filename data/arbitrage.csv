@@ -5,3 +5,8 @@
 "icx/eth-binance-gateio","2018-07-25T04:33:15.912Z","ICX/ETH",358166.18911175,"binance",0.002792,"gateio",0.002953,4.74
 "vet/eth-binance-gateio","2018-07-25T04:33:16.616Z","VET/ETH",21800741.22520166,"binance",0.00004587,"gateio",0.000049,5.79
 "bcd/btc-gateio-binance","2018-08-16T14:39:03.303Z","BCD/BTC",6211180.1242236,"gateio",0.000161,"binance",0.001508,831.46
+"-kraken-independentreserve","2018-08-17T13:30:18.730Z",0.15422103,"kraken",6484.2,"independentreserve",8935.77,36.86
+"-kraken-btcmarkets","2018-08-17T13:32:41.851Z",0.15384615,"kraken",6500,"btcmarkets",8951.52,36.29
+"-kraken-independentreserve","2018-08-17T13:33:11.897Z",0.15384615,"kraken",6500,"independentreserve",8935.77,36.53
+"-kraken-independentreserve","2018-08-17T13:58:16.642Z",0.15450458,"kraken",6472.3,"independentreserve",8935.77,37.11
+"-kraken-independentreserve","2018-08-17T14:01:55.700Z",0.15422103,"kraken",6484.2,"independentreserve",8935.77,36.86

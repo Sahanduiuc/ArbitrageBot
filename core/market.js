@@ -10,11 +10,13 @@ const fetchCheerioObject = require('fetch-cheerio-object');
 
 const exchange_conf = require('../config/exchanges.json');
 
+////global vars/////
 let convRatio = 1; 
+
 exports.initialize = async function() {
   try {
-    let exchanges = []
-    convRatio = await conversionRate();
+    let exchanges = [];
+    await conversionRate();
 
     if (configs.arbitrage.filter.exchanges) {
       exchanges = exchange_conf;
@@ -22,12 +24,11 @@ exports.initialize = async function() {
       exchanges = ccxt.exchanges;
     }
 
-    console.log('started', exchanges);
+    //console.log('started', exchanges);
     startArbitrageByTicket(exchanges);
-    // setInterval(function() {
-    //   console.log('started', exchanges, ticket);
-    //   startArbitrageByTicket(exchanges, ticket)
-    // }, (configs.arbitrage.checkInterval > 0 ? configs.arbitrage.checkInterval : 1) * 60000);
+    setInterval(function() {
+      startArbitrageByTicket(exchanges)
+    }, (configs.arbitrage.checkInterval > 0 ? configs.arbitrage.checkInterval : 1) * 6000);
     
   } catch (error) {
     console.log(error);
@@ -71,17 +72,17 @@ async function conversionRate(){////Scraping ratio info from everforex, use VPN 
 
 async function startArbitrageByTicket(exchanges) {
   try {
-    let promises = exchanges.map(async (exchange) =>
-      Promise.resolve(await fetchDataByTicketAndExchange(
-        exchange)));
-/*
+    let promises = exchanges.map(async (exchange) => 
+      Promise.resolve(await fetchDataByTicketAndExchange(exchange))
+    );
+
     Promise.all(promises).then((response) => {
-      console.log('Response:',response);
+      //console.log('Response:',response);
       arbitrage.checkOpportunity(response);
     }).catch((error) => {
       console.error(colors.red('Error:'), error.message);
     });
-*/
+
   } catch (error) {
     console.error(colors.red('Error:'), error.message);
   }
@@ -92,7 +93,7 @@ async function fetchDataByTicketAndExchange(exchange) {
     name: exchange.id,
     cost: exchange.takerFee,
     bid: 0,
-    ask: 0
+    ask: 0,
   };
 
   try {
@@ -106,10 +107,15 @@ async function fetchDataByTicketAndExchange(exchange) {
       result.bid = (exchange.usdToAud) ? usdToAud(market.bid) : market.bid 
       result.ask = (exchange.usdToAud) ? usdToAud(market.ask) : market.ask 
     }
+    
+    // const balance = await exchange_instance.fetchBalance();
+    // console.log(`${exchange.id} Balance:`, balance);
+
   } catch (error) {
+    result.error = error;
     console.log(error);
   } finally {
-    console.log(result);
+    console.log(result);    
     return result;
   }
 }
