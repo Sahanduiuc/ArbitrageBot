@@ -1,4 +1,7 @@
 {
+  "market": {
+    "convertionSpread": 1   
+  },
   "arbitrage": {
     "checkInterval": 5,
     "openOpportunity": 4.00,

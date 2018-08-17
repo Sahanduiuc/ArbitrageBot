@@ -9,6 +9,7 @@
   "dependencies": {
     "ccxt": "^1.10.713",
     "colors": "^1.1.2",
+    "fetch-cheerio-object": "^1.2.0",
     "json2csv": "^3.11.5",
     "lodash": "^4.17.10"
   },

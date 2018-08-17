@@ -1,0 +1,54 @@
+Arguments: 
+  /usr/local/Cellar/node/9.10.1/bin/node /usr/local/bin/yarn add fetch-cheerio-object
+
+PATH: 
+  /usr/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/usr/local/bin:/bin:/usr/sbin:/sbin:/Applications/VMware
+
+Yarn version: 
+  1.6.0
+
+Node version: 
+  9.10.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/fetch-cheerio-object/-/fetch-cheerio-object-1.2.0.tgz: Request failed "503 Service Unavailable"
+      at ResponseError.ExtendableBuiltin (/usr/local/lib/node_modules/yarn/lib/cli.js:212:66)
+      at new ResponseError (/usr/local/lib/node_modules/yarn/lib/cli.js:318:124)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:61933:26)
+      at Request.emit (events.js:180:13)
+      at Request.module.exports.Request.onRequestResponse (/usr/local/lib/node_modules/yarn/lib/cli.js:134041:10)
+      at ClientRequest.emit (events.js:180:13)
+      at HTTPParser.parserOnIncomingClient (_http_client.js:540:21)
+      at HTTPParser.parserOnHeadersComplete (_http_common.js:117:17)
+      at TLSSocket.socketOnData (_http_client.js:445:20)
+      at TLSSocket.emit (events.js:180:13)
+
+npm manifest: 
+  {
+    "name": "arbitrage-bot",
+    "description": "Trading bot for cryptocurrency",
+    "version": "1.0.0",
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js"
+    },
+    "dependencies": {
+      "ccxt": "^1.10.713",
+      "colors": "^1.1.2",
+      "json2csv": "^3.11.5",
+      "lodash": "^4.17.10"
+    },
+    "devDependencies": {
+      "nodemon": "^1.18.3",
+      "prompt": "^1.0.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
